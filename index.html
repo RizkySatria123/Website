@@ -3,10 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    /* Style.css */
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+            --background-light: #f8f9fa;
+            --background-dark: #343a40;
+            --text-light: #333;
+            --text-dark: #fff;
+            --card-bg: #fff;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-light);
+            color: var(--text-light);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            padding: 2rem;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: 1fr;
+            margin: 2rem 0;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: 1fr 2fr;
+            }
+        }
+
+        /* Navigasi */
+        .navbar {
+            width: 100%;
+            background-color: #f1f3f5;
+            padding: 1rem 0;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin: 0 1rem;
+            transition: color 0.2s ease-in-out;
+        }
+
+        .navbar a:hover {
+            color: #0056b3;
+        }
+
+        /* Bagian lainnya */
+        .profile-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 1.5rem;
+            border-radius: 12px;
+            background-color: #f1f3f5;
+        }
+
+        .profile-card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary-color);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-card h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 1rem 0 0.5rem;
+        }
+
+        .profile-card p {
+            font-size: 1rem;
+            color: var(--secondary-color);
+            margin: 0;
+        }
+
+        .details-section h2,
+        .skills-section h2,
+        .resume-section h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .details-section .detail-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .details-section .detail-item .icon {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-right: 1rem;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .skill-tag {
+            background-color: var(--primary-color);
+            color: var(--text-dark);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 400;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-2px) scale(1.05);
+            background-color: #0056b3;
+        }
+
+        .resume-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .resume-item h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        .resume-item p {
+            margin: 0.2rem 0 0;
+            color: var(--secondary-color);
+        }
+
+        .resume-item ul {
+            margin-top: 0.5rem;
+            padding-left: 20px;
+        }
+
+        .footer {
+            text-align: center;
+            padding-top: 2rem;
+            color: var(--secondary-color);
+            font-size: 0.8rem;
+        }
+    </style>
     <title>Profil Diri Saya</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="navbar">
         <a href="index.html">Profil</a>
@@ -21,44 +192,45 @@
                 <a href="https://www.linkedin.com/in/rizky-satria-gunawan-0373a033a/" title="LinkedIn">🔗</a>
                 <a href="https://github.com/RizkySatria123" title="GitHub">🐙</a>
                 <a href="https://www.facebook.com/rizkysatria.rizkysatria.39" title="Facebook">📱</a>
-        </div>
-
-        <div>
-            <div class="details-section">
-                <h2>Informasi Detail</h2>
-                <div class="detail-item">
-                    <span class="icon">🏠</span>
-                    <p><strong>Alamat:</strong> Kp.Kaum Kidul Barat RT/RW 003/016, Desa Ciwidey</p>
-                </div>
-                <div class="detail-item">
-                    <span class="icon">📧</span>
-                    <p><strong>Email:</strong> rizky12satria@gmail.com</p>
-                </div>
-                <div class="detail-item">
-                    <span class="icon">📞</span>
-                    <p><strong>Telepon:</strong> +62 882 1828 4563</p>
-                </div>
-                <div class="detail-item">
-                    <span class="icon">💼</span>
-                    <p><strong>Pekerjaan:</strong> Mahasiswa </p>
-                </div>
             </div>
 
-            <div class="skills-section">
-                <h2>Keahlian</h2>
-                <div class="skills-grid">
-                    <span class="skill-tag">C/C++</span>
-                    <span class="skill-tag">HTML/CSS</span>
-                    <span class="skill-tag">Martketing</span>
-                    <span class="skill-tag">Bisnis Ritel</span>
-                    <span class="skill-tag">Excel</span>
-                    <span class="skill-tag">Ekonomi</span>
+            <div>
+                <div class="details-section">
+                    <h2>Informasi Detail</h2>
+                    <div class="detail-item">
+                        <span class="icon">🏠</span>
+                        <p><strong>Alamat:</strong> Kp.Kaum Kidul Barat RT/RW 003/016, Desa Ciwidey</p>
+                    </div>
+                    <div class="detail-item">
+                        <span class="icon">📧</span>
+                        <p><strong>Email:</strong> rizky12satria@gmail.com</p>
+                    </div>
+                    <div class="detail-item">
+                        <span class="icon">📞</span>
+                        <p><strong>Telepon:</strong> +62 882 1828 4563</p>
+                    </div>
+                    <div class="detail-item">
+                        <span class="icon">💼</span>
+                        <p><strong>Pekerjaan:</strong> Mahasiswa </p>
+                    </div>
+                </div>
+
+                <div class="skills-section">
+                    <h2>Keahlian</h2>
+                    <div class="skills-grid">
+                        <span class="skill-tag">C/C++</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">Martketing</span>
+                        <span class="skill-tag">Bisnis Ritel</span>
+                        <span class="skill-tag">Excel</span>
+                        <span class="skill-tag">Ekonomi</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="footer">
-        <p>&copy; 2025 Dibuat Oleh Rizky Satria </p>
-    </div>
+        <div class="footer">
+            <p>&copy; 2025 Dibuat Oleh Rizky Satria </p>
+        </div>
 </body>
+
 </html>
